@@ -1,0 +1,15 @@
+#app.yaml
+runtime: python37
+
+env_variables:
+  CLOUD_SQL_USERNAME: akash
+  CLOUD_SQL_PASSWORD: akashram
+  CLOUD_SQL_DATABASE_NAME: santander_prod
+  CLOUD_SQL_CONNECTION_NAME: santander-recommendation:us-central1:santander
+  #DB_HOST: 172.17.0.1:3306
+
+beta_settings:
+    cloud_sql_instances: santander-recommendation:us-central1:santander
+
+resources:
+  memory_gb: 4.0    
