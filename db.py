@@ -18,11 +18,6 @@ db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
 #db_socket_dir = os.environ.get("DB_SOCKET_DIR", "/cloudsql")
 #cloud_sql_connection_name = os.environ.get['CLOUD_SQL_CONNECTION_NAME']
 
-# configuration 
-app.config["SECRET_KEY"] = "yoursecretkey"
-app.config["SQLALCHEMY_DATABASE_URI"]= f"mysql + mysqldb://akash:akashram@/santander_prod?unix_socket =/cloudsql/santander-recommenation:santander-recommendation:us-central1:santander"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= True
-
 db = SQLAlchemy(app)
 
 def open_connection():
@@ -61,13 +56,7 @@ def get_songs():
     return got_songs
 
 def getCustomerDetails(id):
-    DATABASE_URI= 'postgres+psycopg2://dkkektly:CsF_ZIP3ApwRu1DLQMxRT4br3H14yqhn@satao.db.elephantsql.com:5432/dkkektly'
-    #DATABASE_URI= 'postgres+psycopg2://mlwqkqui:snbVGjtG2F_Oa5FY476S7WTllbx--Lr2@echo.db.elephantsql.com:5432/mlwqkqui'
-    #'mysql+pymysql://akash:akashram@127.0.0.1:4500/santander_prod'
-    
-    #postgres://dkkektly:CsF_ZIP3ApwRu1DLQMxRT4br3H14yqhn@satao.db.elephantsql.com:5432/dkkektly
-    
-    #'mysql+pymysql://akash:akashram@/santander_prod?unix_socket=/cloudsql/santander-recommendation:us-central1:santander' #127.0.0.1/santander_prod'
+    DATABASE_URI= ''
     
     engine=create_engine(DATABASE_URI)
     connection=engine.connect()
